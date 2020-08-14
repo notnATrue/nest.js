@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
-
+import { HouseService } from "./cards/service";
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  async getHello(): Promise<any> {
+    const doc = await HouseService.createHouse();
+    return doc;
   }
 }
