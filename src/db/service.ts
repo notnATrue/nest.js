@@ -1,5 +1,4 @@
 require("dotenv").config();
-import mongoose, { connect } from 'mongoose';
 import { House } from 'src/cards/schema';
 import {createConnection, Connection} from "typeorm";
 
@@ -16,9 +15,5 @@ export class Database {
       ],
     });
     return connection;
-
-    // const uri = process.env.DB_URI;
-    // const db = connect(uri, { useNewUrlParser: true }).catch((error) => { console.log(error); });
-    // return db;
   }
 }

@@ -1,10 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { HouseTest } from './cards/model';
+import { IHouse, IPropertyForHouse } from './cards/interface';
 import { HouseService } from "./cards/service";
 @Injectable()
 export class AppService {
-  async getHello(): Promise<any> {
-    const docs = await HouseTest.find();
-    return docs;
+  async offers(): Promise<IHouse[]> {
+    const data = await HouseService.find();
+    return data;
+  }
+
+  async properties(): Promise<IPropertyForHouse[]> {
+    const data = await HouseService.findProperties();
+    return data;
   }
 }

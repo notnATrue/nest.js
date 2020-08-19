@@ -1,4 +1,4 @@
-import {Entity, ObjectID, ObjectIdColumn, Column} from "typeorm";
+import { Column } from "typeorm";
 
 export class Property {
   @Column()
@@ -14,5 +14,5 @@ export class Property {
   bedrooms: number
 
   @Column()
-  area: string
+  area: number
 }
