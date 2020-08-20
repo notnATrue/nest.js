@@ -1,7 +1,9 @@
 require("dotenv").config();
+import { Injectable } from '@nestjs/common';
 import { House } from 'src/cards/schema';
 import {createConnection, Connection} from "typeorm";
 
+@Injectable()
 export class Database {
   static async connect() {
     const connection: Connection = await createConnection({

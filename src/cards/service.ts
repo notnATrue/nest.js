@@ -1,14 +1,15 @@
 import { House } from "./schema";
 import { IHouse, IPropertyForHouse } from "./interface";
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class HouseService {
-
-  static async find(): Promise<IHouse[]> {
+  async find(): Promise<IHouse[]> {
     const docs: IHouse[] = await House.find();
     return docs;
   }
 
-  static async findProperties(): Promise<IPropertyForHouse[]> {
+  async findProperties(): Promise<IPropertyForHouse[]> {
     const docs: IHouse[] = await House.find();
     let properties: IPropertyForHouse[] = [];
     for (const doc of docs) {
