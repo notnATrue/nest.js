@@ -7,12 +7,12 @@ export class AppService {
   constructor(private readonly houseService: HouseService) { }
   
   async offers(): Promise<IHouse[]> {
-    const data = await this.houseService.find();
+    const data: IHouse[] = await this.houseService.find();
     return data;
   }
 
   async properties(): Promise<IPropertyForHouse[]> {
-    const data = await this.houseService.findProperties();
+    const data: IPropertyForHouse[] = await this.houseService.findProperties();
     return data;
   }
 }
