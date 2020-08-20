@@ -1,17 +1,20 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Res } from '@nestjs/common';
 import { AppService } from './app.service';
+import { Response } from "express";
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get("/offers")
-  getOffers(): Promise<any> {
-    return this.appService.offers();
+  async getOffers(@Res() response: Response): Promise<Response> {
+    const data = await this.appService.offers();
+    return response.send(data);
   }
 
   @Get("/properties")
-  getProperties(): Promise<any> {
-    return this.appService.properties();
+  async getProperties(@Res() response: Response): Promise<Response> {
+    const data = await this.appService.properties();
+    return response.send(data);
   }
 }
