@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { IHouse, IPropertyForHouse } from './cards/interface';
-import { HouseService } from "./cards/service";
+import { IHouse, IPropertyForHouse } from './house/interface';
+import { HouseService } from "./house/service";
 
 @Injectable()
 export class AppService {

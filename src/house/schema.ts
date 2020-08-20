@@ -1,5 +1,5 @@
 import {Entity, ObjectID, ObjectIdColumn, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
-import { Property } from "./property";
+import { Property } from "./property.schema";
 @Entity()
 export class House extends BaseEntity {
 

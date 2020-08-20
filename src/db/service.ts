@@ -1,6 +1,6 @@
 require("dotenv").config();
 import { Injectable } from '@nestjs/common';
-import { House } from 'src/cards/schema';
+import { House } from 'src/house/schema';
 import {createConnection, Connection} from "typeorm";
 
 @Injectable()
