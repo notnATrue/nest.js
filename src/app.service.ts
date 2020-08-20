@@ -4,7 +4,8 @@ import { HouseService } from "./cards/service";
 
 @Injectable()
 export class AppService {
-  constructor(private readonly houseService: HouseService) {}
+  constructor(private readonly houseService: HouseService) { }
+  
   async offers(): Promise<IHouse[]> {
     const data = await this.houseService.find();
     return data;

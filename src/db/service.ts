@@ -5,7 +5,7 @@ import {createConnection, Connection} from "typeorm";
 
 @Injectable()
 export class Database {
-  static async connect() {
+  static async connect(): Promise<Connection> {
     const connection: Connection = await createConnection({
       type: "mongodb",
       url: process.env.DB_URI,
